@@ -1,20 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router'
 import './index.css';
 
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import NazwaModulu from "./Utils";
 
-var App = require('./App');
+import App from './App'
+import page1 from './page1'
+import page2 from './page2'
+import NazwaModulu from './Utils'
+
+
 ReactDOM.render(
-  React.createElement(
-    'div',
-    {},
-    'Hello!!',
-    React.createElement(App),
-    React.createElement(NazwaModulu)
+  (
+      <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <Route path="utils" component={NazwaModulu}/>
+          <Route path="page1" component={page1}/>
+          <Route path="page2" component={page2}/>
+        </Route>
+      </Router>
   ),
   document.getElementById('root')
-)
+);
