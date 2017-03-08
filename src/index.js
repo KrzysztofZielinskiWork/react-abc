@@ -11,6 +11,7 @@ import App from './App'
 import page1 from './page1'
 import page2 from './page2'
 import NazwaModulu from './Utils'
+import BooksView from './books-view'
 
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route path="utils" component={NazwaModulu}/>
           <Route path="page1" component={page1}/>
           <Route path="page2" component={page2}/>
+          <Route path="books" component={BooksView}/>
         </Route>
       </Router>
   ),

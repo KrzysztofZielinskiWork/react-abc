@@ -29,6 +29,9 @@ const App = (props) => (
             <NavItem>Page Two</NavItem>
           </LinkContainer>
 
+          <LinkContainer to="/books">
+            <NavItem>Books View</NavItem>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
