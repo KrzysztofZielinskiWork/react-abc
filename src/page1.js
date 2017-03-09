@@ -1,6 +1,5 @@
 import React from 'react'
 import {Grid, Button} from 'react-bootstrap'
-import {Users} from './page2'
 
 const Page1 = (props) => (
 

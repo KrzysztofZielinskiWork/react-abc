@@ -1,25 +1,34 @@
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import persistState from 'redux-localstorage'
+// action type
+const FETCH = 'books/FETCH';
 
-// import booksReducer from '../state/books'
-import booksJSONReducer from '../state/booksJSON'
+// action creator
+export const fetchSuccess = () => {
+  // we return thunk;
+  // thunk will get one call argument from redux-thunk;
+  // the argument will be a dispatch method of store;
+  return function (dispatch) {
+    return fetch(
+      process.env.PUBLIC_URL + '/data/books.js',
 
+      books => dispatch({ type: FETCH, data: books })
+    )
+  }
+};
 
-const reducer = combineReducers({
-  // books: booksReducer,
-  booksJSON: booksJSONReducer,
-  favoriteStudents: (state = {}, action = {}) => { switch (action.type) { default: return state } }
-});
+// initial state
+const initialState = {
+  values: null
+};
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducer,
-  /* preloadedState, */
-  composeEnhancers(
-    persistState(['counter']),
-    applyMiddleware(thunk)
-  )
-);
-
-export default store
+// reducer
+export default (state = initialState, action = {}) => {
+  switch (action.type) {
+    case FETCH:
+      return {
+        ...state,
+        values: action.data
+      };
+    default:
+      return state
+  }
+}
