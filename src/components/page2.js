@@ -1,6 +1,6 @@
 import React from 'react'
 import {Grid} from 'react-bootstrap'
-
+import Movie from './movie'
 export const Users = [
   {
     id: 1,
@@ -33,7 +33,7 @@ const Page2 = (props) =>
           )
         }
       </ul>
-
+      <Movie className="movie-style-2" alt="blah">hfghfdhgfgh</Movie>
     </Grid>
   );
 

@@ -3,3 +3,53 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.movie-style {
+  color: #ffffff;
+  padding: 5px;
+}
+
+.movie-style img {
+  border: 5px solid #ffffff;
+  vertical-align: middle;
+max-width: 270px;
+}
+
+.movie-style-2 {
+  color: yellow
+}
+
+.movie-style-2 img {
+  border: 10px solid green;
+}
+
+ul li:nth-child(2n) {
+  color: pink;
+}
+
+/*.modyfication {*/
+/*background-color: green;*/
+/*}*/
+
+.modification,
+.modification:focus,
+.modification:link,
+.modification:hover,
+.modification:active,
+.modification:visited,
+.modification:active:hover,
+.modification:visited:hover {
+  background-color: #162026;
+  background-image: linear-gradient(to bottom, #162026 0%, #547177 100%);
+  border-color: #162026;
+  color: #ffffff;
+}
+
+.movie-head {
+  background-color: #162026;
+}
+
+.description-head {
+  color: #ffffff;
+  /*padding: 15px;*/
+}
